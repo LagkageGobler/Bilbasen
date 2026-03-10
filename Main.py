@@ -13,10 +13,22 @@ def StartDatabase(db_name):
 def DBtable(connection):
     query = """
     CREATE TABLE IF NOT EXISTS users(
-        id INTEGER PRIMARY KEY
-        name TEXT
-        emil TEXT UNIQUE
-        password TEXT
+        id INTEGER PRIMARY KEY,
+        name TEXT,
+        emil TEXT UNIQUE,
+        password TEXT,
+    )
+    CREATE TABLE IF NOT EXISTS biler(
+        id INTEGER PRIMARYKEY,
+        km INTEGER,
+        modelÅr INTEGER,
+        pris INTEGER,
+        drivemidel TEXT,
+        hestekræfter INTEGER,
+        afgift INTEGER,
+        BilNavn TEXT,
+        Mærke TEXT,
+        Url TEXT,
     )
     """
     try:
