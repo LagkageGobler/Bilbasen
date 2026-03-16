@@ -24,10 +24,7 @@ def DBtable(connection):
         modelÅr INTEGER,
         pris INTEGER,
         drivemidel TEXT,
-        hestekræfter INTEGER,
-        afgift INTEGER,
         BilNavn TEXT,
-        Mærke TEXT,
         Url TEXT,
     )
     """
@@ -37,3 +34,13 @@ def DBtable(connection):
     except Exception as e:
         print(e)
         raise
+
+def Update(db_name):
+    sql = "DELETE FROM biler WHERE id = ?"
+    conn = sqlite3.connect(db_name)
+    cur = conn.cursor()
+    for i in sql.count(id):
+        cur.execute(sql, i)
+        i += 1
+    conn.commit()
+    conn.close()
