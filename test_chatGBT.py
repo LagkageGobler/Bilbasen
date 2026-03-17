@@ -3,15 +3,17 @@ from bs4 import BeautifulSoup
 import re
 
 articlelist = []
-
 templist = []
+x = 1
 
-
+link_bil = open("link_til_bil.txt", "w")
+link_bil.write("")
+link_bil.close()
 
 
 def article_list(templist, page):
     url = f"https://www.bilbasen.dk/brugt/bil?includeengroscvr=true&includeleasing=false&page={page}"
-
+    print(url)
     headers = {
     "User-Agent": "Mozilla/5.0"
     }
@@ -38,9 +40,10 @@ def article_list(templist, page):
             templist.append(href)
     return templist
 
-for x in range(100):
-  print(x)
-  templist = article_list(templist,x)
-  articlelist.extend(templist)
-
-print(articlelist)
+for i in range(1, 100):
+    templist = []
+    print(i)
+    templist = article_list(templist,i)
+    link_bil = open("link_til_bil.txt", "a")
+    for link in templist:
+        link_bil.write(link + "\n")
