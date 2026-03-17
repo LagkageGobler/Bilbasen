@@ -1,6 +1,8 @@
 #imports
 import sqlite3 
 
+#Script wide variables
+db_name = "bilgovrum.db"
 # setup database
 def StartDatabase(db_name):
     try:
@@ -10,28 +12,17 @@ def StartDatabase(db_name):
         raise
 
 # lav table
-def DBtable(connection):
-    query = """
-    CREATE TABLE IF NOT EXISTS users(
-        name TEXT PRIMARY KEY,
-        emil TEXT UNIQUE,
-        password TEXT,
-    )
-    CREATE TABLE IF NOT EXISTS biler(
-        id INTEGER PRIMARYKEY,
-        prisPrKm INTEGER,
-        modelÅr INTEGER,
-        drivemidel TEXT,
-        BilNavn TEXT,
-        Url TEXT,
-    )
-    """
+def DBtable(db_name):
+    conn = sqlite3.connect(db_name)
+    cur = conn.cursor()
     try:
-        with connection:
-            connection.execute(query)
+        cur.execute("create table if not exists users(name, emil, password)")
+        cur.execute("create table if not exists biler(id, prisPrKm, modelÅr, drivemidel, BilNavn, Url)")
     except Exception as e:
         print(e)
         raise
+    conn.commit()
+    conn.close()
 
 def Update(db_name):
     sql = "DELETE FROM biler WHERE id = ?"
@@ -49,3 +40,8 @@ def ADDuser(db_name, UserName, Email, Password):
     cur.execute("insert into users values (?, ?, ?)", (UserName, Email, Password))
     conn.commit()
     conn.close()
+
+def main():
+    StartDatabase(db_name)
+    DBtable(db_name)
+main()
