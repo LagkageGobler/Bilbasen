@@ -13,16 +13,14 @@ def StartDatabase(db_name):
 def DBtable(connection):
     query = """
     CREATE TABLE IF NOT EXISTS users(
-        id INTEGER PRIMARY KEY,
-        name TEXT,
+        name TEXT PRIMARY KEY,
         emil TEXT UNIQUE,
         password TEXT,
     )
     CREATE TABLE IF NOT EXISTS biler(
         id INTEGER PRIMARYKEY,
-        km INTEGER,
+        prisPrKm INTEGER,
         modelÅr INTEGER,
-        pris INTEGER,
         drivemidel TEXT,
         BilNavn TEXT,
         Url TEXT,
@@ -42,5 +40,12 @@ def Update(db_name):
     for i in sql.count(id):
         cur.execute(sql, i)
         i += 1
+    conn.commit()
+    conn.close()
+
+def ADDuser(db_name, UserName, Email, Password):
+    conn = sqlite3.connect(db_name)
+    cur = conn.cursor()
+    cur.execute("insert into users values (?, ?, ?)", (UserName, Email, Password))
     conn.commit()
     conn.close()
