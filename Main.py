@@ -23,7 +23,7 @@ def DBtable(db_name):
         raise
     conn.commit()
     conn.close()
-
+#slet datbase
 def Update(db_name):
     sql = "DELETE FROM biler WHERE id = ?"
     conn = sqlite3.connect(db_name)
@@ -33,14 +33,14 @@ def Update(db_name):
         i += 1
     conn.commit()
     conn.close()
-
+#add users to database
 def ADDuser(db_name, UserName, Email, Password):
     conn = sqlite3.connect(db_name)
     cur = conn.cursor()
     cur.execute("insert into users values (?, ?, ?)", (UserName, Email, Password))
     conn.commit()
     conn.close()
-
+#main
 def main():
     StartDatabase(db_name)
     DBtable(db_name)
