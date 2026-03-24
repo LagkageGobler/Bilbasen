@@ -30,12 +30,14 @@ while login:
             outputP = []
             for password in res:
                 outputP.append(password[0])
-                
-            if cur.execute(db_name, input("indsæt dit password: ") in "password"):
+
+            if  input("Indsæt dit password: ") in outputP:
                 login = False
                 Menu = True
+
             else:
                 print("Forkert password")
+
         else:
             print("Forkert username")
         cx.close()
