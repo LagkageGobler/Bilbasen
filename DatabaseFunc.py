@@ -1,9 +1,6 @@
 #imports
 import sqlite3
 
-
-#Script wide variables
-db_name = "bilgovrum.db"
 # setup database
 def StartDatabase(db_name):
     try:
@@ -40,9 +37,3 @@ def ADDuser(db_name, UserName, Email, Password):
 #add biler to database
 def ADDbiler():
     pass
-
-#main
-def main():
-    StartDatabase(db_name)
-    DBtable(db_name)
-main()

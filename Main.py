@@ -1,4 +1,56 @@
-while True:
+from DatabaseFunc import ADDuser, StartDatabase, DBtable
+import sqlite3
+db_name = "BilGoVrum.db"
+Menu = False
+login = True
+
+StartDatabase(db_name)
+DBtable(db_name)
+
+while login:
+    print("\n--- Login/Signup ---")
+    print("1. Login")
+    print("2. Sign up")
+    print("3. Quit")
+
+    valg = input("Choose (1-3): ")
+
+    if valg == "1":
+        userN = input("Indtast dit usernavn: ")
+        cx = sqlite3.connect(db_name)
+        cur = cx.cursor()
+        res = cur.execute("SELECT name FROM users").fetchall()
+        outputN = []
+        #https://www.youtube.com/watch?v=hwR9ex9QKxQ
+        for name in res:
+            outputN.append(name[0])
+
+        if userN in outputN:
+            res = cur.execute("SELECT password FROM users").fetchall()
+            outputP = []
+            for password in res:
+                outputP.append(password[0])
+            if cur.execute(db_name, input("indsæt dit password: ") in "password"):
+                login = False
+                Menu = True
+            else:
+                print("Forkert password")
+        else:
+            print("Forkert username")
+        cx.close()
+
+
+
+
+    if valg == "2":
+        ADDuser(db_name, input("Indsæt user navn: "), input("Indsæt email: "), input("Indsæt password: "))
+    
+    if valg == "3":
+        print("Bye, bye")
+        break
+
+
+while Menu:
     print("\n--- MENU ---")
     print("1. Sorter biler ud fra pris/km")
     print("2. Sorter biler ud fra modelår til pris")
