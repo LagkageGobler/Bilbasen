@@ -21,7 +21,7 @@ while login:
         cur = cx.cursor()
         res = cur.execute("SELECT name FROM users").fetchall()
         outputN = []
-        #https://www.youtube.com/watch?v=hwR9ex9QKxQ
+        #https://www.youtube.com/watch?v=hwR9ex9QKxQ denne video forklare koden under hvor en tuble bliver konverteret til en liste
         for name in res:
             outputN.append(name[0])
 
@@ -30,6 +30,7 @@ while login:
             outputP = []
             for password in res:
                 outputP.append(password[0])
+                
             if cur.execute(db_name, input("indsæt dit password: ") in "password"):
                 login = False
                 Menu = True
