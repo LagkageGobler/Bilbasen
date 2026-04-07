@@ -15,16 +15,20 @@ def DBtable(db_name):
     cur = conn.cursor()
     try:
         cur.execute("create table if not exists users(name, emil, password)")
-        cur.execute("create table if not exists biler(id, prisPrKm, modelÅr, drivemidel, BilNavn, Url)")
+        cur.execute("create table if not exists biler(prisPrKm, modelÅr, drivemidel, BilNavn, Url, hestekrafter)")
     except Exception as e:
         print(e)
         raise
     conn.commit()
     conn.close()
 
-#slet datbase
+#slet datbase og indstætte de nye biler
 def Update(db_name):
-    pass
+    conn = sqlite3.connect(db_name)
+    cur = conn.cursor()
+    cur.execute("DROP TABLE biler")
+    conn.commit()
+    conn.close()
 
 #add users to database
 def ADDuser(db_name, UserName, Email, Password):
@@ -35,5 +39,10 @@ def ADDuser(db_name, UserName, Email, Password):
     conn.close()
 
 #add biler to database
-def ADDbiler():
-    pass
+def ADDbiler(db_name, Hestekrafter, pris, km, modelår, drivemidel, bilnavn, url):
+    conn = sqlite3.connect(db_name)
+    cur = conn.cursor()
+    prisPrKM = pris / km
+    cur.execute("insert into biler values (?, ?, ?, ?, ?, ?)",(prisPrKM, modelår, drivemidel, bilnavn, url, Hestekrafter))
+    conn.commit()
+    conn.close()

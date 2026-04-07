@@ -1,4 +1,4 @@
-from DatabaseFunc import ADDuser, StartDatabase, DBtable
+from DatabaseFunc import ADDuser, StartDatabase, DBtable, Update
 import sqlite3
 db_name = "BilGoVrum.db"
 Menu = False
@@ -77,7 +77,8 @@ while Menu:
         pass
 
     elif valg == "5":
-        pass
+        Update(db_name)
+        print("Databasen er blevet updateret")
 
     elif valg == "6":
         print("Bye, bye")
