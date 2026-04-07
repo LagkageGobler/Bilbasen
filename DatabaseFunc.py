@@ -29,6 +29,7 @@ def Update(db_name):
     cur.execute("DROP TABLE biler")
     conn.commit()
     conn.close()
+    DBtable(db_name)
 
 #add users to database
 def ADDuser(db_name, UserName, Email, Password):
