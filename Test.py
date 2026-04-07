@@ -3,7 +3,7 @@ import requests
 import json
 
 html = requests.get(
-    "https://www.bilbasen.dk/brugt/bil/tesla/model-y/long-range-awd-5d/6843759",
+    "https://www.bilbasen.dk/brugt/bil/audi/a6-e-tron/progress-plus-avant-5d/6787281",
     headers={"User-Agent": "Mozilla/5.0"}
 ).text
 
@@ -36,5 +36,5 @@ print(display_values[2])
 print(display_values[11])
 print(props["listing"]["vehicle"]["make"])
 print(props["listing"]["vehicle"]["model"] + ": " + props["listing"]["vehicle"]["variant"])
-print(props["listing"]["vehicle"]["ratings"]["average"])
-print(props["listing"]["price"]["displayValue"])
+#try: print(props["listing"]["vehicle"]["ratings"]["average"])
+#try: print(props["listing"]["price"]["displayValue"])
