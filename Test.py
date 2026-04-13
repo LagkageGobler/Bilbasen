@@ -50,7 +50,12 @@ def bil_info():
     print(display_values[11]) #hestekraft
     print(props["listing"]["vehicle"]["make"] + ": " + props["listing"]["vehicle"]["model"]) #mærke
     print(props["listing"]["price"]["displayValue"]) #pris
-
+    pris = props["listing"]["price"]["displayValue"]
+    pris = pris.replace("kr","")
+    pris = pris.replace(".","")
+    km = display_values[2]
+    km = km.replace("km","")
+    km = km.replace(".","")
   
 bil_info()
 
