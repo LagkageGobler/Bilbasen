@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 import json
 
-def slet_bil_info_textfil(data, link):
+def slet_bil_info_textfil(link):
     data_på_bil = open("data_på_bil.txt", "w")
     data_på_bil.write("")
     data_på_bil.close()
@@ -16,7 +16,7 @@ def lines_in_fil(filename):
 def bil_info():
     slet_bil_info_textfil()
     html = requests.get(
-        "https://www.bilbasen.dk/brugt/bil/audi/a6-e-tron/progress-plus-avant-5d/6787281",
+        link,
         headers={"User-Agent": "Mozilla/5.0"}
     ).text
 
@@ -51,7 +51,7 @@ def bil_info():
     print(props["listing"]["vehicle"]["make"] + ": " + props["listing"]["vehicle"]["model"]) #mærke
     print(props["listing"]["price"]["displayValue"]) #pris
 
-    
+  
 bil_info()
 
 file = open("data_på_bil", "a")
@@ -60,8 +60,7 @@ for i in lines_in_fil("link_til_bil.txt"):
     print(i)
     templist = []
     templist.append(bil_info(i))
-    link_bil = open("data_på_bil.txt", "a")
-    for link in templist:
-        link_bil.write(link + "\n")
+    file.write(templist + "\n")
+    
 
 file.close()
