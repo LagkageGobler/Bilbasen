@@ -23,6 +23,7 @@ def bil_data():
     pris = pris.replace(".","")
     print("pris: " + pris)
     #print("årgang: " + årgang)
-bil_data()
 #root > div.nmp-ads-layout__wrapper > div.nmp-ads-layout__page > div.nmp-ads-layout__content > div:nth-child(2) > article > main > div:nth-child(8) > div > table > tbody > tr:nth-child(3) > td
 #root > div.nmp-ads-layout__wrapper > div.nmp-ads-layout__page > div.nmp-ads-layout__content > div:nth-child(2) > article > main > div:nth-child(8) > div > table > tbody > tr:nth-child(1) > td
+
+
