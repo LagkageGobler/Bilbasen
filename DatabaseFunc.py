@@ -24,11 +24,19 @@ def DBtable(db_name):
 
 #slet datbase og indstætte de nye biler
 def Update(db_name):
+    #sletter databasen
     conn = sqlite3.connect(db_name)
     cur = conn.cursor()
     cur.execute("DROP TABLE biler")
     conn.commit()
     conn.close()
+    DBtable(db_name)
+    #indsætter de nye biler
+    conn = sqlite3.connect(db_name)
+    cur = conn.cursor()
+    for biler in 
+
+    ADDbiler()
 
 #add users to database
 def ADDuser(db_name, UserName, Email, Password):
