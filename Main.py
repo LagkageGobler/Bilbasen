@@ -62,29 +62,68 @@ while Menu:
     print("1. Sorter biler ud fra pris/km")
     print("2. Sorter biler ud fra modelår til pris")
     print("3. Sorter biler ud fra drivemidel til pris")
-    print("4. Sorter biler ud fra Mærke til pris")
-    print("5. Update database(Tager mega lang tid)")
-    print("6. Quit")
+    print("4. Sorter biler ud fra mærke til pris")
+    print("5. Sorter biler ud fra hestekrafter til pris")
+    print("6. Update database(Tager mega lang tid)")
+    print("7. Quit")
 
-    valg = input("Choose (1-6): ")
-
+    valg = input("Vælg (1-7): ")
+    #denne video giver en god forklaring på sortering https://www.youtube.com/watch?v=51RLlmj89nQ
     if valg == "1":
-        pass
+        conn = sqlite3.connect(db_name)
+        cur = conn.cursor()
+        selection = cur.execute("""
+        SELECT prisPrKM, Url
+        FROM biler
+        ORDER BY prisPrKM
+""").fetchall()
+        print("Her er bilerne sorteret efter pris pr km:", selection)
 
     elif valg == "2":
-        pass
+        conn = sqlite3.connect(db_name)
+        cur = conn.cursor()
+        selection = cur.execute("""
+        SELECT prisPrKM, modelår, Url
+        FROM biler
+        ORDER BY prisPrKM, modelår
+""").fetchall()
+        print("Her er bilerne sorteret efter pris til modelår:", selection)
 
     elif valg == "3":
-        pass
+        conn = sqlite3.connect(db_name)
+        cur = conn.cursor()
+        selection = cur.execute("""
+        SELECT prisPrKM, modelår, Url
+        FROM biler
+        ORDER BY prisPrKM, drivemidel
+""").fetchall()
+        print("Her er bilerne sorteret efter pris til drivemidel:", selection)
 
     elif valg == "4":
-        pass
+        conn = sqlite3.connect(db_name)
+        cur = conn.cursor()
+        selection = cur.execute("""
+        SELECT prisPrKM, modelår, Url
+        FROM biler
+        ORDER BY prisPrKM, Bilnavn
+""").fetchall()
+        print("Her er bilerne sorteret efter pris til mærke:", selection)
 
     elif valg == "5":
+        conn = sqlite3.connect(db_name)
+        cur = conn.cursor()
+        selection = cur.execute("""
+        SELECT prisPrKM, modelår, Url
+        FROM biler
+        ORDER BY prisPrKM, hestekrafter
+""").fetchall()
+        print("Her er bilerne sorteret efter pris til hestekrafter:", selection)
+
+    elif valg == "6":
         Update(db_name)
         print("Databasen er blevet updateret")
 
-    elif valg == "6":
+    elif valg == "7":
         print("Bye, bye")
         break
     
