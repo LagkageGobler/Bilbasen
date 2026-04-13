@@ -45,12 +45,16 @@ while login:
 
 
 
-    if valg == "2":
+    elif valg == "2":
         ADDuser(db_name, input("Indsæt user navn: "), input("Indsæt email: "), input("Indsæt password: "))
     
-    if valg == "3":
+    elif valg == "3":
         print("Bye, bye")
         break
+    
+    else:
+        print("Bevar dit svar inde for rangen vi har angivet tak")
+
 
 
 while Menu:
