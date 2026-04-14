@@ -34,7 +34,7 @@ def Update(db_name):
     #indsætter de nye biler
     conn = sqlite3.connect(db_name)
     cur = conn.cursor()
-    for biler in 
+    #for biler in 
 
     ADDbiler()
 

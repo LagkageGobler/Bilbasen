@@ -4,9 +4,11 @@ db_name = "BilGoVrum.db"
 Menu = False
 login = True
 
+#disse funktioner starter databasen og laver tables kig i filen databaseFunc
 StartDatabase(db_name)
 DBtable(db_name)
 
+#starter med at være true
 while login:
     print("\n--- Login/Signup ---")
     print("1. Login")
@@ -56,7 +58,7 @@ while login:
         print("Bevar dit svar inde for rangen vi har angivet tak")
 
 
-
+#false indtil man login 
 while Menu:
     print("\n--- MENU ---")
     print("1. Sorter biler ud fra pris/km")
