@@ -1,0 +1,5 @@
+286 hk/400 nm,7600 ,389900 ,2025,El,BMW: i4
+197 hk/400 nm,240000 ,79900 ,2007,Diesel,BMW: 325d
+286 hk/400 nm,7600 ,389900 ,2025,El,BMW: i4,https://www.bilbasen.dk/brugt/bil/bmw/i4/edrive35-m-sport-5d/6826694
+197 hk/400 nm,240000 ,79900 ,2007,Diesel,BMW: 325d,https://www.bilbasen.dk/brugt/bil/bmw/325d/30-touring-5d/5954095
+258 hk/560 nm,233000 ,329500 ,2015,Diesel,BMW: X5,https://www.bilbasen.dk/brugt/bil/bmw/x5/30-xdrive30d-aut-5d/6694538

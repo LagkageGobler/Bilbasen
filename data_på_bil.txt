@@ -1,2 +1,1 @@
-['130 hk', '149800', '28202', '2023', 'el', 'Renault', 'https://www.bilbasen.dk/brugt/bil/renault/megane-e-tech/40-equilibre-5d/6857086']
-['75 hk', '9900', '277200', '2006', 'benzin', 'VW', 'https://www.bilbasen.dk/brugt/bil/vw/fox/14-3d/6833768']
+['dfg', 'fdg', 'dfg', 'dfg', 'dfg', 'dfg', 'dfg']
