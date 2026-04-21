@@ -2,7 +2,7 @@
 import sqlite3
 #variabler
 db_name = "BilGoVrum.db"
-
+#bruges i while loop 
 def lines_in_fil(filename):
     with open(filename) as file:
         lines = file.readlines()
@@ -30,8 +30,9 @@ def DBtable(db_name):
     conn.commit()
     conn.close()
 
-#slet datbase og indstætte de nye biler
+#slet database og indstætte de nye biler
 def Update(db_name):
+    #bruges i while loop som place holder
     n = 0
     #sletter databasen
     conn = sqlite3.connect(db_name)
@@ -42,6 +43,7 @@ def Update(db_name):
     DBtable(db_name)
     #indsætter de nye biler
     Data_til_bil = open("data_på_bil.txt")
+    #while loop kører igennem alle linjer i filen data_på_bil og ligger dem ind i databasen 
     while lines_in_fil("data_på_bil.txt") > n:
         tempstring = Data_til_bil.readline()
         templist = tempstring.split(",")
@@ -63,6 +65,7 @@ def ADDuser(db_name, UserName, Email, Password):
 def ADDbiler(db_name, Hestekrafter, pris, km, modelår, drivemidel, bilnavn, url):
     conn = sqlite3.connect(db_name)
     cur = conn.cursor()
+    #striper stringsne så de kan konverteres til int
     prisPrKM = int(pris.strip().strip("'")) / int(km.strip().strip("'"))
     cur.execute("INSERT INTO biler VALUES (?, ?, ?, ?, ?, ?)",(prisPrKM, modelår, drivemidel, bilnavn, url, Hestekrafter))
     conn.commit()

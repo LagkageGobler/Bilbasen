@@ -66,7 +66,7 @@ while Menu:
     print("3. Sorter biler ud fra drivemidel til pris")
     print("4. Sorter biler ud fra mærke til pris")
     print("5. Sorter biler ud fra hestekrafter til pris")
-    print("6. Update database(Tager mega lang tid)")
+    print("6. Update database(Kræver en okay pc)")
     print("7. Quit")
 
     valg = input("Vælg (1-7): ")
@@ -85,7 +85,7 @@ while Menu:
     elif valg == "2":
         conn = sqlite3.connect(db_name)
         cur = conn.cursor()
-        selection = cur.execute("SELECT prisPrKM, modelÅr, Url FROM biler ORDER BY prisPrKM ASC").fetchall()
+        selection = cur.execute("SELECT prisPrKM, modelÅr, Url FROM biler ORDER BY modelÅr DESC").fetchall()
         print("Her er bilerne sorteret efter pris til modelår:")
         n = 0
         while len(selection) != n:
@@ -106,8 +106,8 @@ while Menu:
     elif valg == "4":
         conn = sqlite3.connect(db_name)
         cur = conn.cursor()
-        selection = cur.execute("SELECT prisPrKM, modelÅr, Url FROM biler ORDER BY prisPrKM ASC").fetchall()
-        print("Her er bilerne sorteret efter pris til modelår:")
+        selection = cur.execute("SELECT prisPrKM, BilNavn, Url FROM biler ORDER BY BilNavn ASC").fetchall()
+        print("Her er bilerne sorteret efter pris til mærke:")
         n = 0
         while len(selection) != n:
             print(selection[n])
@@ -117,7 +117,7 @@ while Menu:
     elif valg == "5":
         conn = sqlite3.connect(db_name)
         cur = conn.cursor()
-        selection = cur.execute("SELECT prisPrKM, hestekrafter, Url FROM biler ORDER BY prisPrKM ASC").fetchall()
+        selection = cur.execute("SELECT prisPrKM, hestekrafter, Url FROM biler ORDER BY hestekrafter ASC").fetchall()
         print("Her er bilerne sorteret efter pris til hestekrafter:")
         n = 0
         while len(selection) != n:
