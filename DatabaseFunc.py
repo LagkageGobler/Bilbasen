@@ -1,6 +1,7 @@
 #imports
 import sqlite3
-
+#variabler
+db_name = "BilGoVrum.db"
 # setup database
 def StartDatabase(db_name):
     try:
@@ -32,11 +33,12 @@ def Update(db_name):
     conn.close()
     DBtable(db_name)
     #indsætter de nye biler
-    conn = sqlite3.connect(db_name)
-    cur = conn.cursor()
-    #for biler in 
-
-    ADDbiler()
+    Data_til_bil = open("data_på_bil.txt")
+    for biler in e:
+        templist = []
+        templist.append(Data_til_bil.readline())
+        ADDbiler(db_name, templist[0], templist[1], templist[2], templist[3], templist[4], templist[5], templist[6])
+    Data_til_bil.close()
 
 #add users to database
 def ADDuser(db_name, UserName, Email, Password):
