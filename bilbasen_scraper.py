@@ -91,14 +91,14 @@ def bil_info(url):
     mærke = props["listing"]["vehicle"]["make"] + ": " + props["listing"]["vehicle"]["model"]
     
     # Returnerer relevante data om bilen
-    return [display_values[hk_index], km, pris, display_values[0], display_values[3], mærke, url]
+    return [hk, km, pris, display_values[0], display_values[3], mærke, url]
 
 
 # Åbner fil med links til biler
 def setter_data_ind_på_data_txt():
     with open("link_til_bil_1.txt") as file:
         n = 0
-        while n < 20:
+        while n < 2:
             # Læser ét link ad gangen
             link = file.readline().strip()
 
@@ -114,3 +114,4 @@ def setter_data_ind_på_data_txt():
                     # Printer fejl hvis noget går galt
                     print(e)
             n += 1
+

@@ -61,6 +61,7 @@ while login:
 #false indtil man login 
 while Menu:
     print("\n--- MENU ---")
+    print("Når man skal ind på et link skal man huske ikke at få Newline med")
     print("1. Sorter biler ud fra pris/km")
     print("2. Sorter biler ud fra modelår til pris")
     print("3. Sorter biler ud fra drivemiddel til pris")

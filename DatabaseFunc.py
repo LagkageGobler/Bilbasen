@@ -47,14 +47,12 @@ def Update(db_name):
         fil.write("")
     setter_data_ind_på_data_txt()
     #indsætter de nye biler
-    Data_til_bil = open("data_på_bil.txt")
+    Data_til_bil = open("data.txt")
     #while loop kører igennem alle linjer i filen data_på_bil og ligger dem ind i databasen 
-    while lines_in_fil("data_på_bil.txt") > n:
+    while lines_in_fil("data.txt") > n:
         tempstring = Data_til_bil.readline()
         templist = tempstring.split(",")
-        print(templist)
         ADDbiler(db_name, templist[0], templist[1], templist[2], templist[3], templist[4], templist[5], templist[6])
-        print(templist)
         n += 1
     Data_til_bil.close()
 
@@ -72,6 +70,7 @@ def ADDbiler(db_name, Hestekrafter, pris, km, modelår, drivemidel, bilnavn, url
     cur = conn.cursor()
     #striper stringsne så de kan konverteres til int
     prisPrKM = int(pris.strip().strip("'")) / int(km.strip().strip("'"))
-    cur.execute("INSERT INTO biler VALUES (?, ?, ?, ?, ?, ?)",(prisPrKM, modelår, drivemidel, bilnavn, url, Hestekrafter))
+    x = url[:-1]
+    cur.execute("INSERT INTO biler VALUES (?, ?, ?, ?, ?, ?)",(prisPrKM, modelår, drivemidel, bilnavn, x, Hestekrafter))
     conn.commit()
     conn.close()
