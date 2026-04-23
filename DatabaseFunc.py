@@ -1,5 +1,6 @@
 #imports
 import sqlite3
+from bilbasen_scraper import setter_data_ind_på_data_txt
 #variabler
 db_name = "BilGoVrum.db"
 #bruges i while loop 
@@ -41,6 +42,7 @@ def Update(db_name):
     conn.commit()
     conn.close()
     DBtable(db_name)
+    setter_data_ind_på_data_txt()
     #indsætter de nye biler
     Data_til_bil = open("data_på_bil.txt")
     #while loop kører igennem alle linjer i filen data_på_bil og ligger dem ind i databasen 

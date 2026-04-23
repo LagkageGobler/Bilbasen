@@ -114,5 +114,3 @@ def setter_data_ind_på_data_txt():
                     # Printer fejl hvis noget går galt
                     print(e)
             n += 1
-
-setter_data_ind_på_data_txt()
