@@ -42,6 +42,9 @@ def Update(db_name):
     conn.commit()
     conn.close()
     DBtable(db_name)
+    #sletter data på text fil
+    with open("data.txt","w") as fil:
+        fil.write("")
     setter_data_ind_på_data_txt()
     #indsætter de nye biler
     Data_til_bil = open("data_på_bil.txt")
