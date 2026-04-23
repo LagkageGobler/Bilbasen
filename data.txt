@@ -1,0 +1,15 @@
+286 hk/400 nm,7600 ,389900 ,2025,El,BMW: i4
+197 hk/400 nm,240000 ,79900 ,2007,Diesel,BMW: 325d
+286 hk/400 nm,7600 ,389900 ,2025,El,BMW: i4,https://www.bilbasen.dk/brugt/bil/bmw/i4/edrive35-m-sport-5d/6826694
+197 hk/400 nm,240000 ,79900 ,2007,Diesel,BMW: 325d,https://www.bilbasen.dk/brugt/bil/bmw/325d/30-touring-5d/5954095
+258 hk/560 nm,233000 ,329500 ,2015,Diesel,BMW: X5,https://www.bilbasen.dk/brugt/bil/bmw/x5/30-xdrive30d-aut-5d/6694538
+286 hk/400 nm,7600 ,389900 ,2025,El,BMW: i4,https://www.bilbasen.dk/brugt/bil/bmw/i4/edrive35-m-sport-5d/6826694
+197 hk/400 nm,240000 ,79900 ,2007,Diesel,BMW: 325d,https://www.bilbasen.dk/brugt/bil/bmw/325d/30-touring-5d/5954095
+258 hk/560 nm,233000 ,329500 ,2015,Diesel,BMW: X5,https://www.bilbasen.dk/brugt/bil/bmw/x5/30-xdrive30d-aut-5d/6694538
+204 hk/395 nm,17500 ,189800 ,2023,El,Hyundai: Kona,https://www.bilbasen.dk/brugt/bil/hyundai/kona/64-ev-essential-5d/6661540
+110 hk/200 nm,88000 ,174900 ,2022,Benzin,Skoda: Scala,https://www.bilbasen.dk/brugt/bil/skoda/scala/10-tsi-110-tour-de-france-dsg-5d/6843775
+286 hk/400 nm,7600 ,389900 ,2025,El,BMW: i4,https://www.bilbasen.dk/brugt/bil/bmw/i4/edrive35-m-sport-5d/6826694
+197 hk/400 nm,240000 ,79900 ,2007,Diesel,BMW: 325d,https://www.bilbasen.dk/brugt/bil/bmw/325d/30-touring-5d/5954095
+258 hk/560 nm,233000 ,329500 ,2015,Diesel,BMW: X5,https://www.bilbasen.dk/brugt/bil/bmw/x5/30-xdrive30d-aut-5d/6694538
+286,7600 ,389900 ,2025,El,BMW: i4,https://www.bilbasen.dk/brugt/bil/bmw/i4/edrive35-m-sport-5d/6826694
+286 hk/400 nm,7600 ,389900 ,2025,El,BMW: i4,https://www.bilbasen.dk/brugt/bil/bmw/i4/edrive35-m-sport-5d/6826694
