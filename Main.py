@@ -63,7 +63,7 @@ while Menu:
     print("\n--- MENU ---")
     print("1. Sorter biler ud fra pris/km")
     print("2. Sorter biler ud fra modelår til pris")
-    print("3. Sorter biler ud fra drivemidel til pris")
+    print("3. Sorter biler ud fra drivemiddel til pris")
     print("4. Sorter biler ud fra mærke til pris")
     print("5. Sorter biler ud fra hestekrafter til pris")
     print("6. Update database(Kræver en okay pc)")
