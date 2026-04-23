@@ -95,21 +95,24 @@ def bil_info(url):
 
 
 # Åbner fil med links til biler
-with open("link_til_bil_1.txt") as file:
-    n = 0
-    while n < 20:
-        # Læser ét link ad gangen
-        link = file.readline().strip()
+def setter_data_ind_på_data_txt():
+    with open("link_til_bil_1.txt") as file:
+        n = 0
+        while n < 20:
+            # Læser ét link ad gangen
+            link = file.readline().strip()
 
-        # Henter info om bilen
-        templist = bil_info(link)
+            # Henter info om bilen
+            templist = bil_info(link)
 
-        # Gemmer data i fil
-        with open("data.txt", "a") as data:
-            try:
-                # Skriver data som kommasepareret linje
-                data.write(",".join(templist) + "\n")
-            except Exception as e:
-                # Printer fejl hvis noget går galt
-                print(e)
-        n += 1
+            # Gemmer data i fil
+            with open("data.txt", "a") as data:
+                try:
+                    # Skriver data som kommasepareret linje
+                    data.write(",".join(templist) + "\n")
+                except Exception as e:
+                    # Printer fejl hvis noget går galt
+                    print(e)
+            n += 1
+
+setter_data_ind_på_data_txt()
