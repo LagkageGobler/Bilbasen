@@ -71,7 +71,7 @@ def ADDbiler(db_name, Hestekrafter, pris, km, modelår, drivemidel, bilnavn, url
     conn = sqlite3.connect(db_name)
     cur = conn.cursor()
     #striper stringsne så de kan konverteres til int
-    prisPrKM = int(pris.strip().strip("'")) / int(km.strip().strip("'"))
+    prisPrKM = int(pris.strip()) / int(km.strip())
     cur.execute("INSERT INTO biler VALUES (?, ?, ?, ?, ?, ?)",(prisPrKM, modelår, drivemidel, bilnavn, url, Hestekrafter))
     conn.commit()
     conn.close()
