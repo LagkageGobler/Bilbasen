@@ -23,6 +23,7 @@ def bil_info(url):
     # Opsætning af Chrome browser options
     options = Options()
     options.add_argument("--start-maximized")  # Starter browser i fuld skærm
+    options.add_argument("--headless=new")
     options.add_argument("--disable-blink-features=AutomationControlled")  # Skjuler automation
     options.add_experimental_option("excludeSwitches", ["enable-automation"])
     options.add_experimental_option("useAutomationExtension", False)
@@ -36,7 +37,7 @@ def bil_info(url):
     # Åbner URL
     driver.get(url)
 
-    # Venter lidt (tilfældigt) for at undgå at ligne en bot
+    # Venter lidt (tilfældigt) for at undgå at ligne en bot og så websiden er lodet helt ind
     time.sleep(random.uniform(1.5, 2.5))
 
     # Henter HTML fra siden og lukker browser
@@ -71,7 +72,6 @@ def bil_info(url):
     # Henter display_values
     display_values = [item["displayValue"] for item in data]
   
-
     # Finder hestekræfter
     hk_index = find_hk(display_values)
     hk = display_values[hk_index]
@@ -89,7 +89,7 @@ def bil_info(url):
     
     # Samler mærke og model
     mærke = props["listing"]["vehicle"]["make"] + ": " + props["listing"]["vehicle"]["model"]
-    
+
     # Returnerer relevante data om bilen
     return [hk, km, pris, display_values[0], display_values[3], mærke, url]
 
@@ -98,7 +98,7 @@ def bil_info(url):
 def setter_data_ind_på_data_txt():
     with open("link_til_bil_1.txt") as file:
         n = 0
-        while n < 2:
+        while n < 20:
             # Læser ét link ad gangen
             link = file.readline().strip()
 
@@ -114,4 +114,3 @@ def setter_data_ind_på_data_txt():
                     # Printer fejl hvis noget går galt
                     print(e)
             n += 1
-

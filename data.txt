@@ -1,2 +1,12 @@
 286,7600 ,389900 ,2025,El,BMW: i4,https://www.bilbasen.dk/brugt/bil/bmw/i4/edrive35-m-sport-5d/6826694
 197,240000 ,79900 ,2007,Diesel,BMW: 325d,https://www.bilbasen.dk/brugt/bil/bmw/325d/30-touring-5d/5954095
+258,233000 ,329500 ,2015,Diesel,BMW: X5,https://www.bilbasen.dk/brugt/bil/bmw/x5/30-xdrive30d-aut-5d/6694538
+110,88000 ,174900 ,2022,Benzin,Skoda: Scala,https://www.bilbasen.dk/brugt/bil/skoda/scala/10-tsi-110-tour-de-france-dsg-5d/6843775
+80,70000 ,69900 ,2019,Benzin,Mitsubishi: Space Star,https://www.bilbasen.dk/brugt/bil/mitsubishi/space-star/12-invite-5d/6681612
+394,63000 ,679900 ,2022,Plug-in hybrid Benzin,BMW: X5,https://www.bilbasen.dk/brugt/bil/bmw/x5/30-xdrive45e-m-sport-aut-5d/6636952
+115,73700 ,119900 ,2017,Benzin,Opel: Mokka X,https://www.bilbasen.dk/brugt/bil/opel/mokka-x/16-essentia-5d/6777445
+286,11500 ,459900 ,2025,El,VW: ID.7,https://www.bilbasen.dk/brugt/bil/vw/id7/86-style-s-tourer-5d/6740070
+601,8000 ,599900 ,2024,El,BMW: i5,https://www.bilbasen.dk/brugt/bil/bmw/i5/m60-m-sport-xdrive-4d/6472346
+95,83000 ,159900 ,2020,Benzin,VW: T-Cross,https://www.bilbasen.dk/brugt/bil/vw/t-cross/10-tsi-95-life-5d/6843770
+320,53500 ,245900 ,2023,El,Tesla: Model Y,https://www.bilbasen.dk/brugt/bil/tesla/model-y/rwd-5d/6843768
+95,123000 ,88900 ,2018,Benzin,Skoda: Fabia,https://www.bilbasen.dk/brugt/bil/skoda/fabia/10-tsi-95-ambition-tour-combi-5d/6843769
