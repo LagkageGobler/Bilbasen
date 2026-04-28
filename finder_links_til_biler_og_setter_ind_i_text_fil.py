@@ -56,8 +56,7 @@ def article_list(templist, page):
             templist.append(href)
     return templist
 
-#loop som finder alle links på alle webpages og setter dem ind på en ext fill
-
+#loop som finder alle links på alle webpages og setter dem ind på en text fil<<<<
 for i in range(1, lide_antal()):
     templist = []
     print(i)
